@@ -20,6 +20,16 @@ XML_DIR = DATA_RAW / "bgg_xml"
 FETCH_LOG_CSV = DATA_RAW / "fetch_log.csv"
 PARSED_CSV = DATA_PROCESSED / "games_parsed.csv"
 
+CLEAN_CSV = DATA_PROCESSED / "games_clean.csv"
+
+MIN_YEAR = 1950          # older "games" are traditional, not designed products
+MAX_YEAR = 2025          # newer games are unreleased or have too little rating history
+REFERENCE_YEAR = 2026    # year the data was collected; used for game_age
+MIN_POLL_VOTES = 10      # poll answers with fewer votes are treated as unknown
+LIGHT_MAX_WEIGHT = 2.0   # complexity classes: light < 2 <= medium < 3 <= heavy
+MEDIUM_MAX_WEIGHT = 3.0
+HIGH_RATING = 7.0        # highly_rated = average_rating >= 7
+
 # other constant parameters:
 MIN_RATINGS = 100
 RANDOM_SEED = 42
