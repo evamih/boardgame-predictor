@@ -21,6 +21,8 @@ FETCH_LOG_CSV = DATA_RAW / "fetch_log.csv"
 PARSED_CSV = DATA_PROCESSED / "games_parsed.csv"
 
 CLEAN_CSV = DATA_PROCESSED / "games_clean.csv"
+FEATURES_CSV = DATA_PROCESSED / "game_features.csv"
+FEATURE_GROUPS_JSON = DATA_PROCESSED / "feature_groups.json"
 
 MIN_YEAR = 1950          # older "games" are traditional, not designed products
 MAX_YEAR = 2025          # newer games are unreleased or have too little rating history
@@ -29,6 +31,12 @@ MIN_POLL_VOTES = 10      # poll answers with fewer votes are treated as unknown
 LIGHT_MAX_WEIGHT = 2.0   # complexity classes: light < 2 <= medium < 3 <= heavy
 MEDIUM_MAX_WEIGHT = 3.0
 HIGH_RATING = 7.0        # highly_rated = average_rating >= 7
+
+TRAIN_END_YEAR = 2021    # temporal split: train <= 2021 < test
+TOP_MECHANICS = 30       # multi-hot columns for the most common values,
+TOP_CATEGORIES = 20      # counted on training years only
+TOP_FAMILIES = 20
+FAMILY_PREFIXES = ("Theme:", "Components:")   # BGG family tags worth keeping
 
 # other constant parameters:
 MIN_RATINGS = 100
